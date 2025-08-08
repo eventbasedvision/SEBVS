@@ -7,13 +7,10 @@
 
 <!-- for adding link to paper and image -->
 
-<!-- <div>
+<div>
 <a href="#"> Paper</a> |
-<a href="https://interact-videoqa.github.io/InterActVideoQA/">Website</a> |
-<a href="https://huggingface.co/datasets/joeWabbit/InterAct_Video_Reasoning_Rich_Video_QA_for_Urban_Traffic/blob/main/README.md">Data</a> |
-<a href="https://interact-videoqa.github.io/InterActVideoQA/docs/InterAct_VideoQADatasetDescription.pdf" target="_blank">Doc </a> |
-<a href="https://github.com/joe-rabbit/interact_videoqa/tree/main/Video_Annotation" target="_blank"> Anotation Tool </a>
-</div> -->
+<a href= "https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing"
+</div> 
 <hr>
 <div style="text-align: center;">
 <img src="https://github.com/user-attachments/assets/d0923a73-4495-4e9b-b28a-f61efedc6c66"/>
@@ -22,9 +19,6 @@
 <p align="justify">Event cameras have emerged as a powerful sensing modality for robotics, offering microsecond latency, high dynamic range, and low power consumption. These characteristics make them well-suited for real-time robotic perception in scenarios affected by motion blur, occlusion, and extreme changes in illumination. Despite this potential event-based vision, particularly through video-to-event (v2e) simulation,remains underutilized in mainstream robotics simulators, limiting the advancement of event-driven solutions for navigation and manipulation. This work presents an open-source, user-friendly v2e robotics operating system (ROS2) package for Gazebo simulation that enables seamless event stream generation from RGB camera feeds. The package is used to investigate event-based robotic policies (ERP) for real-time navigation and manipulation. Two representative scenarios are evaluated: (1) object following with a mobile robot and (2) object detection and grasping with a robotic manipulator. Transformer-based ERPs are trained by behavior cloning and compared to RGB-based counterparts under various operating conditions. Experimental results show that event-based policies
 consistently deliver competitive and often superior robustness in high-speed or visually challenging environments. These results highlight the potential of event-driven perception to improve real-time robotic navigation and manipulation, providing a foundation for broader integration of event cameras into robotic policy learning..
 </p>
-
-# Related Works
-
 
 
 <!-- <div style="text-align: center;">
@@ -44,10 +38,17 @@ To enable event-camera simulation in Gazebo, a lightweight ROS2 package was deve
 
 # Installation Guide
 
+### Tested Setup
+
+OS: Ubuntu 22.04
+ROS 2: Humble (desktop-full)
+Python: 3.10
+Gazebo: any ROS camera publishing sensor_msgs/Image works (classic)
+
 # Folder Structure
 ```
-data
-├── videoannotations.csv
+src
+├── 
 └── Videos
     ├── clip_videos_0.mp4
     ├── clip_videos_1.mp4
