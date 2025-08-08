@@ -1,52 +1,49 @@
 # Updates
-<!-- syntax for updating  -->
+<!-- syntax for updating -->
 <!-- - [6 August 2025] Tool for Manual Annotation Release -->
 
 # *SEBVS*: Synthetic Event-based Visual Servoing for Robot Navigation and Manipulation 
 
-
 <!-- for adding link to paper and image -->
-
 <div>
-<a href="#"> Paper</a> |
-<a href= "https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing"
+<a href="#">Paper</a> | 
+<a href="https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing">Supplementary</a>
 </div> 
+
 <hr>
+
 <div style="text-align: center;">
 <img src="https://github.com/user-attachments/assets/d0923a73-4495-4e9b-b28a-f61efedc6c66"/>
 </div>
 
-<p align="justify">Event cameras have emerged as a powerful sensing modality for robotics, offering microsecond latency, high dynamic range, and low power consumption. These characteristics make them well-suited for real-time robotic perception in scenarios affected by motion blur, occlusion, and extreme changes in illumination. Despite this potential event-based vision, particularly through video-to-event (v2e) simulation,remains underutilized in mainstream robotics simulators, limiting the advancement of event-driven solutions for navigation and manipulation. This work presents an open-source, user-friendly v2e robotics operating system (ROS2) package for Gazebo simulation that enables seamless event stream generation from RGB camera feeds. The package is used to investigate event-based robotic policies (ERP) for real-time navigation and manipulation. Two representative scenarios are evaluated: (1) object following with a mobile robot and (2) object detection and grasping with a robotic manipulator. Transformer-based ERPs are trained by behavior cloning and compared to RGB-based counterparts under various operating conditions. Experimental results show that event-based policies
-consistently deliver competitive and often superior robustness in high-speed or visually challenging environments. These results highlight the potential of event-driven perception to improve real-time robotic navigation and manipulation, providing a foundation for broader integration of event cameras into robotic policy learning..
-</p>
+<p align="justify">
+Event cameras have emerged as a powerful sensing modality for robotics, offering microsecond latency, high dynamic range, and low power consumption. These characteristics make them well-suited for real-time robotic perception in scenarios affected by motion blur, occlusion, and extreme changes in illumination. Despite this potential, event-based vision—particularly through video-to-event (v2e) simulation—remains underutilized in mainstream robotics simulators, limiting the advancement of event-driven solutions for navigation and manipulation.
 
+This work presents an open-source, user-friendly v2e robotics operating system (ROS 2) package for Gazebo simulation that enables seamless event stream generation from RGB camera feeds. The package is used to investigate event-based robotic policies (ERP) for real-time navigation and manipulation. Two representative scenarios are evaluated: (1) object following with a mobile robot and (2) object detection and grasping with a robotic manipulator. Transformer-based ERPs are trained by behavior cloning and compared to RGB-based counterparts under various operating conditions. Experimental results show that event-based policies consistently deliver competitive and often superior robustness in high-speed or visually challenging environments. These results highlight the potential of event-driven perception to improve real-time robotic navigation and manipulation, providing a foundation for broader integration of event cameras into robotic policy learning.
+</p>
 
 <!-- <div style="text-align: center;">
 <img src="https://github.com/user-attachments/assets/82c93cc6-4f7d-4e35-b38f-5079b1b12ef3"/>
 </div> -->
 
-
 <!-- # Dataset Download
 Dataset can be downloaded <a href="https://drive.google.com/drive/folders/1dwbeWHASKkLbLOImyHKE8of8hWCq7bdO?usp=drive_link">here</a> -->
 
-
 # Package Overview
 <p align="justify">
-To enable event-camera simulation in Gazebo, a lightweight ROS2 package was developed that integrates v2ecore’s EventEmulator with standard RGB camera topics. The emulator subscribes to the RGB image stream /camera/image_raw, performs resizing and grayscale conversion, and forwards the processed images to the EventEmulator. The generated event stream is published on the topic /dvs/events, which can subsequently be accumulated into event frames for downstream processing.
-
+To enable event-camera simulation in Gazebo, a lightweight ROS 2 package was developed that integrates v2ecore’s EventEmulator with standard RGB camera topics. The emulator subscribes to the RGB image stream `/camera/image_raw`, performs resizing and grayscale conversion, and forwards the processed images to the EventEmulator. The generated event stream is published on the topic `/dvs/events`, which can subsequently be accumulated into event frames for downstream processing.
 </p>
 
 # Installation Guide
 
 ### Tested Setup
-
-OS: Ubuntu 22.04
-ROS 2: Humble (desktop-full)
-Python: 3.10
-Gazebo: any ROS camera publishing sensor_msgs/Image works (classic)
+- **OS:** Ubuntu 22.04  
+- **ROS 2:** Humble (desktop-full)  
+- **Python:** 3.10  
+- **Gazebo:** Any ROS camera publishing `sensor_msgs/Image` works (Classic)
 
 # Folder Structure
-```
+# Folder Structure
 src
 ├── 
 └── Videos
@@ -55,7 +52,6 @@ src
     ├── clip_videos_2.mp4
     └── ...
 
-```
 <!-- # Model Setup 
 Please look at the official github page for the models to set up.
 - [VideoLLama2](https://github.com/DAMO-NLP-SG/VideoLLaMA2)
@@ -80,7 +76,6 @@ Please look at the official github page for the models to set up.
 
 # Citation
 If you use our package, we appreciate a citation to the paper and to the original author of v2e. 
-```
 @inproceedings{hu2021v2e,
   title={v2e: From video frames to realistic DVS events},
   author={Hu, Yuhuang and Liu, Shih-Chii and Delbruck, Tobi},
@@ -88,7 +83,3 @@ If you use our package, we appreciate a citation to the paper and to the origina
   pages={1312--1321},
   year={2021}
 }
-
-  ```
-
-
