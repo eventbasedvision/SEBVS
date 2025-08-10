@@ -34,6 +34,11 @@ Dataset can be downloaded <a href="https://drive.google.com/drive/folders/1dwbeW
 To enable event-camera simulation in Gazebo, a lightweight ROS 2 package was developed that integrates v2ecore’s EventEmulator with standard RGB camera topics. The emulator subscribes to the RGB image stream `/camera/image_raw`, performs resizing and grayscale conversion, and forwards the processed images to the EventEmulator. The generated event stream is published on the topic `/dvs/events`, which can subsequently be accumulated into event frames for downstream processing.
 </p>
 
+# Dataset 
+ERPArm dataset is available <a href="https://www.dropbox.com/scl/fo/kzj9bw8gq81dc7hf0ff0m/AGCW_q92Vi1fRGIX-ODrlFA?rlkey=2edq60rlehlbjukocmov8kl6q&st=j5nj4sgd&dl=0">here</a>
+
+ERPNav dataset is available <a href="https://www.dropbox.com/scl/fo/vtwkgit49jqnsafroyzmz/AEcEx-MVqFCMS-1Bi0EHQrI?rlkey=g0t6g5mnymc2wcpx98ypq7812&st=pn805sxx&dl=0">here</a>
+
 # Installation Guide
 
 ### Tested Setup
@@ -45,12 +50,8 @@ To enable event-camera simulation in Gazebo, a lightweight ROS 2 package was dev
 # Folder Structure
 # Folder Structure
 src
-├── 
-└── Videos
-    ├── clip_videos_0.mp4
-    ├── clip_videos_1.mp4
-    ├── clip_videos_2.mp4
-    └── ...
+└── ros2_v2e_emulator
+    ├── 
 
 <!-- # Model Setup 
 Please look at the official github page for the models to set up.
