@@ -39,7 +39,6 @@ ERPArm dataset is available <a href="https://www.dropbox.com/scl/fo/kzj9bw8gq81d
 
 ERPNav dataset is available <a href="https://www.dropbox.com/scl/fo/vtwkgit49jqnsafroyzmz/AEcEx-MVqFCMS-1Bi0EHQrI?rlkey=g0t6g5mnymc2wcpx98ypq7812&st=pn805sxx&dl=0">here</a>
 
-# Installation Guide
 
 ### Tested Setup
 - **OS:** Ubuntu 22.04  
@@ -47,28 +46,42 @@ ERPNav dataset is available <a href="https://www.dropbox.com/scl/fo/vtwkgit49jqn
 - **Python:** 3.10  
 - **Gazebo:** Any ROS camera publishing `sensor_msgs/Image` works (Classic)
 
-# Folder Structure
-# Folder Structure
-src
+
+### Package Folder Structure
+```bash
+src/
 └── ros2_v2e_emulator
-    ├── 
+    ├── setup.py
+    └── ros2_v2e_emulator
+        └── emulator_node.py
+```
 
-<!-- # Model Setup 
-Please look at the official github page for the models to set up.
-- [VideoLLama2](https://github.com/DAMO-NLP-SG/VideoLLaMA2)
-- [LlavaNext-Video](https://github.com/LLaVA-VL/LLaVA-NeXT)  
-- [Qwen2-VL-7B-hf](https://github.com/QwenLM/Qwen2.5-VL)
-# Baseline
+# Installation Guide
 
-<div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/264443ff-05c6-49d2-9d5c-60a0789b6b2d" alt="Image">
-</div> -->
+Make sure you have **ROS 2 Humble** and **Gazebo** installed.  
+Install **PyTorch** directly in your ROS 2 Python environment (not inside a Conda environment).  
 
-<!-- The main implementations for these models for InterAct VideoQA can be found here. -->
+Next, install the [v2e](https://github.com/SensorsINI/v2e) packages by following the official instructions.  
 
-<!-- [VideoLLama2](https://github.com/joe-rabbit/interact_videoqa/tree/main/interAct%20VideoQA/VideoLlama2) |
-[LlavaNext-Video](https://github.com/joe-rabbit/interact_videoqa/tree/main/interAct%20VideoQA/Llava-Next-Video) | 
-[Qwen2-VL-7B-hf](https://github.com/joe-rabbit/interact_videoqa/tree/main/interAct%20VideoQA/Qwen-VL2-7B-hf) -->
+Then clone and build this package:
+
+
+```bash 
+git clone https://github.com/eventbasedvision/SEBVS.git
+cd SEBVS
+colcon build
+```
+
+# Usage
+
+To run the default emulator node: 
+
+```bash 
+source install/setup.bash
+ros2 run ros2_v2e_emulator emulator_node
+```
+
+
 
 # License
 
@@ -77,6 +90,7 @@ Please look at the official github page for the models to set up.
 
 # Citation
 If you use our package, we appreciate a citation to the paper and to the original author of v2e. 
+```bash
 @inproceedings{hu2021v2e,
   title={v2e: From video frames to realistic DVS events},
   author={Hu, Yuhuang and Liu, Shih-Chii and Delbruck, Tobi},
@@ -84,3 +98,4 @@ If you use our package, we appreciate a citation to the paper and to the origina
   pages={1312--1321},
   year={2021}
 }
+```
