@@ -27,21 +27,12 @@ except ImportError:
 
 FRAME_FUNCS = ("new_frame", "next_frame", "generate_events", "run")
 
-def try_gpu(params):
-    if not torch.cuda.is_available():
-        return None
-    try:
-        return EventEmulator(**params)
-    except Exception as e:
-        print("GPU init failed → CPU only:", e)
-        return None
-
 class SafeEmu:
-    """Wrap CPU/GPU simulator, fallback on OOM."""
     def __init__(self, **params):
-        self.cpu    = EventEmulator(**params)
-        self.gpu    = try_gpu(params)
+        self.cpu = EventEmulator(**params)
+        self.gpu = EventEmulator(**params) if torch.cuda.is_available() else None
         self.on_gpu = self.gpu is not None
+
         sim = self.gpu or self.cpu
         for name in FRAME_FUNCS:
             if callable(getattr(sim, name, None)):
@@ -49,25 +40,28 @@ class SafeEmu:
                 break
         else:
             raise RuntimeError("No per-frame API found")
-    def events(self, img, ts):
+        
+    def events(self, img, ts=None):
         sim = self.gpu if self.on_gpu else self.cpu
         fn  = getattr(sim, self.fn_name)
+
         try:
-            return fn(img, ts)
-        except TypeError:
+            return fn(img, ts) if ts is not None else fn(img)
+        except TypeError:  # in case ts is unsupported
             return fn(img)
         except torch.cuda.OutOfMemoryError:
             torch.cuda.empty_cache()
             self.on_gpu = False
-            print("CUDA OOM → CPU fallback for this frame")
+            print("CUDA OOM → falling back to CPU")
             return self.events(img, ts)
+        
 
 class V2ENode(Node):
     BLUE = (255,0,0)  # ON
     RED  = (0,0,255)  # OFF
 
     def __init__(self):
-        super().__init__("v2e_node")
+        super().__init__("emulator_node_br")
         self.bridge = CvBridge()
 
         # — Parameters —
@@ -94,7 +88,7 @@ class V2ENode(Node):
         )
 
         self.sub = self.create_subscription(
-            Image, "/ee_camera/image_raw", self.cb, 10)
+            Image, "/camera/image_raw", self.cb, 10)
         self.pub = self.create_publisher(
             EventPacket, "/dvs/events", 10)
 
