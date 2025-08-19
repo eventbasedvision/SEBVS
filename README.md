@@ -39,6 +39,7 @@ ERPArm dataset is available <a href="https://www.dropbox.com/scl/fo/kzj9bw8gq81d
 
 ERPNav dataset is available <a href="https://www.dropbox.com/scl/fo/vtwkgit49jqnsafroyzmz/AEcEx-MVqFCMS-1Bi0EHQrI?rlkey=g0t6g5mnymc2wcpx98ypq7812&st=pn805sxx&dl=0">here</a>
 
+# Installation Guide
 
 ### Tested Setup
 - **OS:** Ubuntu 22.04  
