@@ -21,6 +21,10 @@ setup(
     entry_points={
         'console_scripts': [
             'emulator_node     = ros2_v2e_emulator.emulator_node:main',
+            'emulator_node_br = ros2_v2e_emulator.emulator_node_br:main',
+            'emulator_node_fast = ros2_v2e_emulator.emulator_node_fast:main',
+            'event_generator = ros2_v2e_emulator.event_generator:main',
+            'event_record = ros2_v2e_emulator.event_record:main'
         ],
     },
 )
