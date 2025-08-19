@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'emulator_node     = ros2_v2e_emulator.emulator_node:main',
         ],
     },
 )
