@@ -7,8 +7,8 @@
 <!-- for adding link to paper and image -->
 <div>
 <a href="#">Paper</a> | 
-<a href="https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing">Supplementary</a>
-<a href="https://eventbasedvision.github.io/SEBVS/">website</a>
+<a href="https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing">Supplementary</a> |
+<a href="https://eventbasedvision.github.io/SEBVS/">Website</a>
 </div> 
 
 <hr>
@@ -36,11 +36,8 @@ To enable event-camera simulation in Gazebo, a lightweight ROS 2 package was dev
 </p>
 
 # Dataset 
-ERPArm dataset is available <a href="https://www.dropbox.com/scl/fo/kzj9bw8gq81dc7hf0ff0m/AGCW_q92Vi1fRGIX-ODrlFA?rlkey=2edq60rlehlbjukocmov8kl6q&st=j5nj4sgd&dl=0">here</a>
 
-ERPNav dataset is available <a href="https://www.dropbox.com/scl/fo/vtwkgit49jqnsafroyzmz/AEcEx-MVqFCMS-1Bi0EHQrI?rlkey=g0t6g5mnymc2wcpx98ypq7812&st=pn805sxx&dl=0">here</a>
-
-# Installation Guide
+The Dataset is available<a href=""> here</a>
 
 ### Tested Setup
 - **OS:** Ubuntu 22.04  
@@ -91,7 +88,18 @@ ros2 run ros2_v2e_emulator emulator_node
 
 
 # Citation
-If you use our package, we appreciate a citation to the paper and to the original author of v2e. 
+If you use our package, we appreciate a citation to our paper and to the original author of v2e. 
+
+```bash
+@inproceedings{vinod2025sebvs,
+  title     = {SEBVS: Synthetic Event-based Visual Servoing for Robot Navigation and Manipulation},
+  author    = {Vinod, Krishna and Ramesh, Prithvi Jai and B N, Pavan Kumar and Chakravarthi, Bharatesh},
+  booktitle = {},
+  year      = {2025}
+}
+
+```
+
 ```bash
 @inproceedings{hu2021v2e,
   title={v2e: From video frames to realistic DVS events},
