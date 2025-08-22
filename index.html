@@ -191,12 +191,9 @@ for Robot Navigation and Manipulation
 					<img src="media/images/fig05.png" class="center" />
 					<div class="content has-text-justified">
 						<br>
-						<p> Overview of the InterAct VideoQA data collection framework, integrating traffic video recording and
-							processing with a
-							hybrid approach combining manual labeling and GPT-based automation. The pipeline segments eight hours of
-							footage into 10-second clips, extracts key metadata (e.g., vehicle attributes, movement patterns,
-							pedestrian data), and generates structured question-answer pairs covering attribution, counting, reverse
-							reasoning, event reasoning, and counterfactual inference.
+						<p> 
+              ERPNav and ERPArm share a lightweight early-fusion transformer. We render event polarity maps (E⁺/E⁻) from the v2e ROS2 node over a short window and stack them with RGB to form a 5-channel tensor. After per-channel normalization, a conv patch-embedding splits the image into tokens; positional encodings are added and the tokens pass through a few self-attention + MLP blocks. A pooled [CLS] token feeds a small policy head: ERPNav regresses (v, ω) for differential drive control, while ERPArm regresses a 6-DoF pre-grasp pose 
+(x, y, z, roll, pitch, yaw). Training is behavior cloning from expert demonstrations (navigation: detector-assisted PID producing cmd_vel; manipulation: MoveIt pre-grasp waypoints), using L1/L2 losses with light action smoothing. The design is real-time, requires no depth/flow, and keeps parameters small enough for on-robot inference while retaining the benefits of event-guided perception under fast motion and extreme lighting.
 						</p>
 					</div>
 				</div>
