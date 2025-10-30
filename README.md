@@ -7,8 +7,8 @@
 <!-- for adding link to paper and image -->
 <div>
 <a href="#">Paper</a> | 
-<a href="https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing">Supplementary</a> |
-<a href="https://eventbasedvision.github.io/SEBVS/">Website</a> |
+<!-- <a href="https://drive.google.com/file/d/1tlwI928wwzoIaphzWcdPFxZYTYJ-hMQC/view?usp=sharing">Supplementary</a> | -->
+<a href="https://eventbasedvision.github.io/SEBVS/">Website</a>
 </div> 
 
 <hr>
